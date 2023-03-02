@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/metronero.css">
+    <link rel="icon" type="image/png" href="assets/img/metronero.png" sizes="32x32">
+    <title>Dashboard | Metronero</title>
+  </head>
+  <body>
+  <nav class="navbar px-5 py-2 has-shadow" role="navigation" aria-label="main navigation">
+  <input type="checkbox" id="toggler" class="toggler">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="assets/img/metronero-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width=100%>
+    </a>
+
+<label for="toggler" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="metronero-navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+</div>
+/// SNIP MERCHANT-PANEL
+<div class="navbar-menu" id="metronero-navbar">
+    <div class="navbar-start">
+    	  <hr class="navbar-divider">
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Dashboard</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Themes</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Authentication</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Payments</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Withdrawals</a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-touch">
+      <p>Siren</p>
+      </div>
+      <div class="navbar-item px-1 is-hidden-touch">
+      <p>|</p>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" href="/logoff">
+              <span>
+                Sign out
+              </span>
+            </a>
+          </p>
+	</div>
+      </div>
+    </div>
+
+</div>
+
+  </div>
+</nav>
+
+<section class="section pt-5 px-5">
+
+<div class="columns">
+<div class="column is-narrow is-hidden-touch">
+<aside class="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    <li class="is-current"><span class="button is-primary px-3">Dashboard</span></li>
+  </ul>
+  <p class="menu-label">
+    Settings
+  </p>
+  <ul class="menu-list">
+    <li><a>Themes</a></li>
+    <li><a>Authentication</a></li>
+  </ul>
+  <p class="menu-label">
+    Transactions
+  </p>
+  <ul class="menu-list">
+    <li><a>Payments</a></li>
+    <li><a>Withdrawals</a></li>
+  </ul>
+</aside>
+</div>
+
+/// SNIP MERCHANT-PANEL
+
+<div class="column">
+/// SNIP MERCHANT-DASHBOARD
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">
+      Your balance: 0.61 XMR
+    </p>
+    <p class="subtitle">
+      This month: 5.1 XMR<br>
+      Total sales: 56.24 XMR
+    </p>
+    <div class="buttons">
+      <button class="button is-primary">Create payment</button>
+      <button class="button is-primary is-pulled-right">Docs</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<p class="title">Recent payments</p>
+<div class="table-container">
+<table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
+  <thead>
+    <tr>
+      <th><abbr title="Metronero ID for this specific payment.">Payment ID</abbr></th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th><abbr title="Date of completion or last update.">Date</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¹K4NK3R1</td>
+      <td>0.12 XMR</td>
+      <td>Pending</td>
+      <td>2023-02-21</td>
+    </tr>
+    <tr>
+      <td>Y4R44KL</td>
+      <td>0.23 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-12</td>
+    </tr>
+    <tr>
+      <td>T0PK3K</td>
+      <td>0.24 XMR</td>
+      <td class="has-text-danger">Cancelled</td>
+      <td>2023-02-10</td>
+    </tr>
+    <tr>
+      <td>45IUG4</td>
+      <td>0.34 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-05</td>
+    </tr>
+    <tr>
+      <td>32J4H2</td>
+      <td>0.12 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-30</td>
+    </tr>
+    <tr>
+      <td>832LK4</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>74JI99</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>32IURY</td>
+      <td>0.11 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-26</td>
+    </tr>
+    <tr>
+      <td>DIHA8A</td>
+      <td>0.16 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-23</td>
+    </tr>
+    <tr>
+      <td>432HJD</td>
+      <td>0.32 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-22</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="button is-primary is-pulled-right">Go to payment history</button>
+
+</section>
+/// SNIP
+</div>
+</div> <!-- end tile is-ancestor --!>
+
+  </body>
+</html>

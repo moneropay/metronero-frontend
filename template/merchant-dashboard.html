@@ -1,0 +1,90 @@
+{{ template "head" }}
+{{ template "merchant-panel" }}
+<div class="column">
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">
+      Your balance: 0.61 XMR
+    </p>
+    <p class="subtitle">
+      This month: 5.1 XMR<br>
+      Total sales: 56.24 XMR
+    </p>
+    <div class="buttons">
+      <button class="button is-primary">Create payment</button>
+      <button class="button is-primary is-pulled-right">Docs</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<p class="title">Recent payments</p>
+<div class="table-container">
+<table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
+  <thead>
+    <tr>
+      <th><abbr title="Metronero ID for this specific payment.">Payment ID</abbr></th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th><abbr title="Date of completion or last update.">Date</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¹K4NK3R1</td>
+      <td>0.12 XMR</td>
+      <td>Pending</td>
+      <td>2023-02-21</td>
+    </tr>
+    <tr>
+      <td>Y4R44KL</td>
+      <td>0.23 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-12</td>
+    </tr>
+    <tr>
+      <td>T0PK3K</td>
+      <td>0.24 XMR</td>
+      <td class="has-text-danger">Cancelled</td>
+      <td>2023-02-10</td>
+    </tr>
+    <tr>
+      <td>45IUG4</td>
+      <td>0.34 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-05</td>
+    </tr>
+    <tr>
+      <td>32J4H2</td>
+      <td>0.12 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-30</td>
+    </tr>
+    <tr>
+      <td>832LK4</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>74JI99</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>32IURY</td>
+      <td>0.11 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="button is-primary is-pulled-right">Go to payment history</button>
+
+</section>
+</div>
+
+{{ template "foot" }}

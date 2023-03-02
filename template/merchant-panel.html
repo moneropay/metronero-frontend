@@ -1,0 +1,65 @@
+{{ define "merchant-panel" }}
+<div class="navbar-menu" id="metronero-navbar">
+    <div class="navbar-start">
+    	  <hr class="navbar-divider">
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Dashboard</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Themes</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Authentication</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Payments</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Withdrawals</a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-touch">
+      <p>Siren</p>
+      </div>
+      <div class="navbar-item px-1 is-hidden-touch">
+      <p>|</p>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" href="/logoff">
+              <span>
+                Sign out
+              </span>
+            </a>
+          </p>
+	</div>
+      </div>
+    </div>
+
+</div>
+
+  </div>
+</nav>
+
+<section class="section pt-5 px-5">
+
+<div class="columns">
+<div class="column is-narrow is-hidden-touch">
+<aside class="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    <li class="is-current"><span class="button is-primary px-3">Dashboard</span></li>
+  </ul>
+  <p class="menu-label">
+    Settings
+  </p>
+  <ul class="menu-list">
+    <li><a>Themes</a></li>
+    <li><a>Authentication</a></li>
+  </ul>
+  <p class="menu-label">
+    Transactions
+  </p>
+  <ul class="menu-list">
+    <li><a>Payments</a></li>
+    <li><a>Withdrawals</a></li>
+  </ul>
+</aside>
+</div>
+{{ end }}
