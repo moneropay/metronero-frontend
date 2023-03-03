@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/gofiber/fiber/v2 v2.42.0
 	github.com/gofiber/template v1.7.5
+	github.com/namsral/flag v1.7.4-pre
 )
 
 require (

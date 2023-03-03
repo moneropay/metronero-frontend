@@ -1,11 +1,10 @@
 <section class="hero">
   <div class="hero-body">
     <p class="title">
-      Your balance: 0.61 XMR
+      Your balance: {{ .CurrentBalance }} XMR
     </p>
     <p class="subtitle">
-      This month: 5.1 XMR<br>
-      Total sales: 56.24 XMR
+      Total sales: {{ .TotalSales }} XMR
     </p>
     <div class="buttons">
       <button class="button is-primary">Create payment</button>
@@ -20,19 +19,21 @@
 <table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
   <thead>
     <tr>
-      <th><abbr title="Metronero ID for this specific payment.">Payment ID</abbr></th>
+      <th>Invoice ID</th>
       <th>Amount</th>
       <th>Status</th>
       <th><abbr title="Date of completion or last update.">Date</abbr></th>
     </tr>
   </thead>
   <tbody>
+  {{ range .RecentPayments }}
     <tr>
-      <td>K4NK3R1</td>
-      <td>0.12 XMR</td>
-      <td>Pending</td>
-      <td>2023-02-21</td>
+      <td>{{ .InvoiceID }}</td>
+      <td>{{ .AmountFloat }} XMR</td>
+      <td>{{ .Status }}</td>
+      <td>{{ .Date }}</td>
     </tr>
+  {{ end }}
     <tr>
       <td>Y4R44KL</td>
       <td>0.23 XMR</td>
