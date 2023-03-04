@@ -7,16 +7,17 @@ import (
 	"github.com/gofiber/template/html"
 
 	"gitlab.com/moneropay/metronero-frontend/app/config"
+	"gitlab.com/moneropay/metronero-frontend/app/controllers"
+	"gitlab.com/moneropay/metronero-frontend/app/utils"
 )
 
 func main() {
 	engine := html.New("./views", ".html")
 
-	// Reload the templates on each render, good for development
-	//engine.Reload(true) // Optional. Default: false
-
-	// Debug will print each template that is parsed, good for debugging
-	engine.Debug(true) // Optional. Default: false
+	if config.Debug {
+		engine.Reload(true)
+		engine.Debug(true)
+	}
 
 	app := fiber.New(fiber.Config{
 		Views: engine,
@@ -24,14 +25,8 @@ func main() {
 
 	app.Static("/", "./public")
 
-	// To render a template, you can call the ctx.Render function
-	// Render(tmpl string, values interface{}, layout ...string)
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("merchant-dashboard", fiber.Map{
-			"Username": "Sausagenoods",
-			"CurrentBalance": "12",
-		}, "layouts/merchant-panel")
-	})
+	merchant := app.Group("/merchant")
+	merchant.Get("/dashboard", controllers.MerchantDashboard)
 
-	log.Fatal(app.Listen(config.Bind))
+	utils.StartServerWithGracefulShutdown(app, config.Bind)
 }
