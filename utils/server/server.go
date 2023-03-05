@@ -8,7 +8,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 
-	"gitlab.com/moneropay/metronero-frontend/utils/config"
+	"gitlab.com/moneropay/metronero/metronero-frontend/utils/config"
 )
 
 type Server struct {

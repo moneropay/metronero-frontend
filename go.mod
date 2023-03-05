@@ -1,4 +1,4 @@
-module gitlab.com/moneropay/metronero-frontend
+module gitlab.com/moneropay/metronero/metronero-frontend
 
 go 1.20
 
