@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/metronero.css">
+    <link rel="icon" type="image/png" href="/assets/img/metronero.png" sizes="32x32">
+    <title>{{ .PageTitle }} | Metronero</title>
+  </head>
+  <body>
+  <nav class="navbar px-5 py-2 has-shadow" role="navigation" aria-label="main navigation">
+  <input type="checkbox" id="toggler" class="toggler">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/img/metronero-logo.png" alt="Metronero" width=100%>
+    </a>
+
+<label for="toggler" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="metronero-navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+</div>
+
+<div class="navbar-menu" id="metronero-navbar">
+    <div class="navbar-start">
+    	  <hr class="navbar-divider">
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/admin/dashboard">Dashboard</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/admin/instance">Instance</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/admin/merchants">Merchants</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/admin/payments">Payments</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/admin/withdrawals">Withdrawals</a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-touch">
+      <p>Admin</p>
+      </div>
+      <div class="navbar-item px-1 is-hidden-touch">
+      <p>|</p>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" href="/logoff">
+              <span>
+                Sign out
+              </span>
+            </a>
+          </p>
+	</div>
+      </div>
+    </div>
+
+</div>
+
+  </div>
+</nav>
+
+<section class="section pt-5 px-5">
+
+<div class="columns">
+<div class="column is-narrow is-hidden-touch">
+<aside class="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    <li><a href="/admin/dashboard">Dashboard</a></li>
+  </ul>
+  <p class="menu-label">
+    Settings
+  </p>
+  <ul class="menu-list">
+    <li><a href="/admin/instance">Instance</a></li>
+    <li><a href="/admin/merchants">Merchants</a></li>
+  </ul>
+  <p class="menu-label">
+    Transactions
+  </p>
+  <ul class="menu-list">
+    <li><a href="/admin/payments">Payments</a></li>
+    <li><a href="/admin/withdrawals">Withdrawals</a></li>
+  </ul>
+</aside>
+</div>
+
+<div class="column">
+{{embed}}
+</div>
+</div>
+  </body>
+</html>

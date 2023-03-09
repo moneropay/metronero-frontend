@@ -11,10 +11,15 @@ func main() {
 	app := server.Init(cfg)
 
 	app.Get("/login", controllers.GetLogin)
-	app.Post("/login", controllers.PostLogin)
+	app.Get("/register", controllers.GetRegister)
+	//app.Post("/login", controllers.PostLogin)
 
 	merchant := app.Group("/merchant")
 	merchant.Get("/dashboard", controllers.MerchantDashboard)
+
+	admin := app.Group("/admin")
+	admin.Get("/dashboard", controllers.AdminDashboard)
+	admin.Get("/instance", controllers.AdminInstance)
 
 	app.Static("/assets", "./public")
 
