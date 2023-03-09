@@ -16,10 +16,13 @@ func main() {
 
 	merchant := app.Group("/merchant")
 	merchant.Get("/dashboard", controllers.MerchantDashboard)
+	merchant.Get("/payments", controllers.MerchantPayments)
+	merchant.Get("/theme", controllers.MerchantTheme)
 
 	admin := app.Group("/admin")
 	admin.Get("/dashboard", controllers.AdminDashboard)
 	admin.Get("/instance", controllers.AdminInstance)
+	admin.Get("/withdrawals", controllers.AdminWithdrawals)
 
 	app.Static("/assets", "./public")
 

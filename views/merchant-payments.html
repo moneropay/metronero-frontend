@@ -1,0 +1,81 @@
+<section class="section">
+<p class="title">Payments</p>
+<div class="table-container">
+<table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
+  <thead>
+    <tr>
+      <th>Invoice ID</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th><abbr title="Date of completion or last update.">Date</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ range .RecentPayments }}
+    <tr>
+      <td>{{ .InvoiceID }}</td>
+      <td>{{ .AmountFloat }} XMR</td>
+      <td>{{ .Status }}</td>
+      <td>{{ .Date }}</td>
+    </tr>
+  {{ end }}
+    <tr>
+      <td>Y4R44KL</td>
+      <td>0.23 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-12</td>
+    </tr>
+    <tr>
+      <td>T0PK3K</td>
+      <td>0.24 XMR</td>
+      <td class="has-text-danger">Cancelled</td>
+      <td>2023-02-10</td>
+    </tr>
+    <tr>
+      <td>45IUG4</td>
+      <td>0.34 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-05</td>
+    </tr>
+    <tr>
+      <td>32J4H2</td>
+      <td>0.12 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-30</td>
+    </tr>
+    <tr>
+      <td>832LK4</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>74JI99</td>
+      <td>0.10 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-27</td>
+    </tr>
+    <tr>
+      <td>32IURY</td>
+      <td>0.11 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="field is-grouped is-grouped-centered">
+  <p class="control">
+    <a class="button is-primary">
+      Prev
+    </a>
+  </p>
+  <p class="control">
+    <a class="button is-primary">
+      Next
+    </a>
+  </p>
+</div>
+
+</section>

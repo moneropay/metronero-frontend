@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/metronero.css">
     <link rel="icon" type="image/png" href="/assets/img/metronero.png" sizes="32x32">
-    <title>Dashboard | Metronero</title>
+    <title>{{ .PageTitle }} | Metronero</title>
   </head>
   <body>
   <nav class="navbar px-5 py-2 has-shadow" role="navigation" aria-label="main navigation">
   <input type="checkbox" id="toggler" class="toggler">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href="/merchant/dashboard">
       <img src="/assets/img/metronero-logo.png" alt="Metronero" width=100%>
     </a>
 
@@ -26,12 +26,11 @@
 <div class="navbar-menu" id="metronero-navbar">
     <div class="navbar-start">
     	  <hr class="navbar-divider">
-          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Dashboard</a>
-          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Themes</a>
-          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Authentication</a>
-          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Payments</a>
-          <a class="navbar-item is-hoverable is-hidden-desktop" target="new">Withdrawals</a>
-
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/merchant/dashboard">Dashboard</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/merchant/theme">Theme</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/merchant/auth">Authentication</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/merchant/payments">Payments</a>
+          <a class="navbar-item is-hoverable is-hidden-desktop" target="new" href="/merchant/withdrawals">Withdrawals</a>
     </div>
 
     <div class="navbar-end">
@@ -68,21 +67,21 @@
     General
   </p>
   <ul class="menu-list">
-    <li><a>Dashboard</a></li>
+    <li><a href="/merchant/dashboard">Dashboard</a></li>
   </ul>
   <p class="menu-label">
     Settings
   </p>
   <ul class="menu-list">
-    <li><a>Themes</a></li>
-    <li><a>Authentication</a></li>
+    <li><a href="/merchant/theme">Theme</a></li>
+    <li><a href="/merchant/auth">Authentication</a></li>
   </ul>
   <p class="menu-label">
     Transactions
   </p>
   <ul class="menu-list">
-    <li><a>Payments</a></li>
-    <li><a>Withdrawals</a></li>
+    <li><a href="/merchant/payments">Payments</a></li>
+    <li><a href="/merchant/withdrawals">Withdrawals</a></li>
   </ul>
 </aside>
 </div>

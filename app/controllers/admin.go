@@ -15,3 +15,9 @@ func AdminInstance(c *fiber.Ctx) error {
 		"PageTitle": "Instance Settings",
 	}, "layouts/admin-panel")
 }
+
+func AdminWithdrawals(c *fiber.Ctx) error {
+	return c.Render("admin-withdrawals", fiber.Map{
+		"PageTitle": "Withdrawals",
+	}, "layouts/admin-panel")
+}
