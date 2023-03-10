@@ -21,3 +21,9 @@ func AdminWithdrawals(c *fiber.Ctx) error {
 		"PageTitle": "Withdrawals",
 	}, "layouts/admin-panel")
 }
+
+func AdminPayments(c *fiber.Ctx) error {
+	return c.Render("admin-payments", fiber.Map{
+		"PageTitle": "Payments",
+	}, "layouts/admin-panel")
+}

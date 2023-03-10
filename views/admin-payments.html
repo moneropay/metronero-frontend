@@ -1,11 +1,11 @@
 <section class="section">
-<p class="title">Payments</p>
-
+<p class="title">Withdrawals</p>
 
 <div class="table-container">
 <table class="table is-bordered is-striped is-hoverable is-fullwidth is-narrow">
   <thead>
     <tr>
+      <th>Merchant</th>
       <th>Invoice ID</th>
       <th>Amount</th>
       <th>Fee</th>
@@ -16,6 +16,7 @@
   <tbody>
   {{ range .Payments }}
     <tr>
+      <td>{{ .Username }}</td>
       <td>{{ .InvoiceID }}</td>
       <td>{{ .AmountFloat }} XMR</td>
       <td>{{ .Fee }} XMR</td>
@@ -24,6 +25,7 @@
     </tr>
   {{ end }}
     <tr>
+      <td>Siren</td>
       <td>Y4R44KL</td>
       <td>0.23 XMR</td>
       <td>0.1 XMR</td>
@@ -31,11 +33,36 @@
       <td>2023-02-12</td>
     </tr>
     <tr>
+      <td>Siren</td>
       <td>HD2324</td>
       <td>0.23 XMR</td>
       <td>0.1 XMR</td>
       <td class="has-text-success">Finished</td>
       <td>2023-02-12</td>
+    </tr>
+    <tr>
+      <td>Stnbee</td>
+      <td>T0PK3K</td>
+      <td>0.24 XMR</td>
+      <td>0.12 XMR</td>
+      <td class="has-text-danger">Cancelled</td>
+      <td>2023-02-10</td>
+    </tr>
+    <tr>
+      <td>Dong</td>
+      <td>45IUG4</td>
+      <td>0.34 XMR</td>
+      <td>0.15 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-02-05</td>
+    </tr>
+    <tr>
+      <td>Duxz</td>
+      <td>32J4H2</td>
+      <td>0.12 XMR</td>
+      <td>0.06 XMR</td>
+      <td class="has-text-success">Finished</td>
+      <td>2023-01-30</td>
     </tr>
   </tbody>
 </table>
