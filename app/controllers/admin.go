@@ -27,3 +27,17 @@ func AdminPayments(c *fiber.Ctx) error {
 		"PageTitle": "Payments",
 	}, "layouts/admin-panel")
 }
+
+func AdminMerchants(c *fiber.Ctx) error {
+	return c.Render("admin-merchants", fiber.Map{
+		"PageTitle": "Merchants",
+	}, "layouts/admin-panel")
+}
+
+func AdminMerchantEdit(c *fiber.Ctx) error {
+	params := c.AllParams()
+	return c.Render("admin-merchant-edit", fiber.Map{
+		"Username": params["uname"],
+		"PageTitle": "Merchant Edit",
+	}, "layouts/admin-panel")
+}

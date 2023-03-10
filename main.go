@@ -26,6 +26,8 @@ func main() {
 	admin.Get("/instance", controllers.AdminInstance)
 	admin.Get("/withdrawals", controllers.AdminWithdrawals)
 	admin.Get("/payments", controllers.AdminPayments)
+	admin.Get("/merchants", controllers.AdminMerchants)
+	admin.Get("/merchants/edit/:id", controllers.AdminMerchantEdit)
 
 	app.Static("/assets", "./public")
 
