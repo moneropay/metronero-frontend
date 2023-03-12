@@ -19,6 +19,7 @@ require (
 	github.com/goccy/go-json v0.9.11 // indirect
 	github.com/golang-migrate/migrate/v4 v4.15.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
+	github.com/gorilla/rpc v1.2.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
@@ -49,6 +50,7 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.44.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
+	gitlab.com/moneropay/go-monero v1.0.1 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	golang.org/x/crypto v0.7.0 // indirect
 	golang.org/x/net v0.8.0 // indirect

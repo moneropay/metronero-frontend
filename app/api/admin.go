@@ -7,14 +7,12 @@ import (
 	"io"
 	"encoding/json"
 
-	"github.com/golang-jwt/jwt/v4"
-
 	"gitlab.com/moneropay/metronero/metronero-backend/app/models"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/utils/config"
 )
 
-func backendRequest(token *jwt.Token, method string) ([]byte, error) {
+func backendRequest(token, method string) ([]byte, error) {
 	endpoint, err := url.JoinPath(config.Backend, method)
 	if err != nil {
 		return nil, err
@@ -25,7 +23,7 @@ func backendRequest(token *jwt.Token, method string) ([]byte, error) {
 		return nil, err
 	}
 
-	req.Header.Set("Authorization", fmt.Sprintf("Bearer %v", token.Raw))
+	req.Header.Set("Authorization", fmt.Sprintf("Bearer %v", token))
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
@@ -34,7 +32,7 @@ func backendRequest(token *jwt.Token, method string) ([]byte, error) {
 	return io.ReadAll(res.Body)
 }
 
-func GetAdminDashboard(token *jwt.Token) (*models.AdminDashboardInfo, error) {
+func GetAdminDashboard(token string) (*models.AdminDashboardInfo, error) {
 	resp, err := backendRequest(token, "/admin")
 	if err != nil {
 		return nil, err

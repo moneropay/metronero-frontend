@@ -2,21 +2,22 @@ package controllers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/golang-jwt/jwt/v4"
+
+	"gitlab.com/moneropay/go-monero/walletrpc"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/app/api"
 )
 
 func AdminDashboard(c *fiber.Ctx) error {
-	token := c.Locals("user").(*jwt.Token)
+	token := c.Cookies("token")
 	resp, err := api.GetAdminDashboard(token)
 	if err != nil {
 		return c.SendString(err.Error())
 	}
 	return c.Render("admin-dashboard", fiber.Map{
 		"PageTitle": "Dashboard",
-		"Balance": resp.Stats.WalletBalance,
-		"Profits": resp.Stats.TotalProfits,
+		"Balance": walletrpc.XMRToDecimal(resp.Stats.WalletBalance),
+		"Profits": walletrpc.XMRToDecimal(resp.Stats.TotalProfits),
 	}, "layouts/admin-panel")
 }
 

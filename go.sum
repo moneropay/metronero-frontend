@@ -626,6 +626,8 @@ github.com/gorilla/handlers v1.4.2/go.mod h1:Qkdc/uu4tH4g6mTK6auzZ766c4CA0Ng8+o/
 github.com/gorilla/mux v1.7.2/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
 github.com/gorilla/mux v1.7.3/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
 github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/gorilla/rpc v1.2.0 h1:WvvdC2lNeT1SP32zrIce5l0ECBfbAlmrmSBsuc57wfk=
+github.com/gorilla/rpc v1.2.0/go.mod h1:V4h9r+4sF5HnzqbwIez0fKSpANP0zlYd3qR7p36jkTQ=
 github.com/gorilla/websocket v0.0.0-20170926233335-4201258b820c/go.mod h1:E7qHFY5m1UJ88s3WnNqhKjPHQ0heANvMoAMk2YaljkQ=
 github.com/gorilla/websocket v1.4.0/go.mod h1:E7qHFY5m1UJ88s3WnNqhKjPHQ0heANvMoAMk2YaljkQ=
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
@@ -1199,6 +1201,8 @@ github.com/yvasiyarov/go-metrics v0.0.0-20140926110328-57bccd1ccd43/go.mod h1:aX
 github.com/yvasiyarov/gorelic v0.0.0-20141212073537-a9bba5b9ab50/go.mod h1:NUSPSUX/bi6SeDMUh6brw0nXpxHnc96TguQh0+r/ssA=
 github.com/yvasiyarov/newrelic_platform_go v0.0.0-20140908184405-b21fdbd4370f/go.mod h1:GlGEuHIJweS1mbCqG+7vt2nvWLzLLnRHbXz5JKd/Qbg=
 github.com/zenazn/goji v0.9.0/go.mod h1:7S9M489iMyHBNxwZnk9/EHS098H4/F6TATF2mIxtB1Q=
+gitlab.com/moneropay/go-monero v1.0.1 h1:1c2/cZyQNA00ab3oss0zMAlfmxCx7bkjuJQxBao/1+g=
+gitlab.com/moneropay/go-monero v1.0.1/go.mod h1:savCTi5INlv5/cWEmMUdtFRPEXJybn5K8oLWKcvL2fc=
 gitlab.com/moneropay/metronero/metronero-backend v0.0.0-20230311202821-3826f5667582 h1:ufIn3M3vm2PU3CFVWS+1kHaSPS6mI5xwTVLSLPelcCQ=
 gitlab.com/moneropay/metronero/metronero-backend v0.0.0-20230311202821-3826f5667582/go.mod h1:lmfryZVQn0vKF0j3ZKKEG6xquohnlRzOQ+rM32OrP7U=
 gitlab.com/moneropay/metronero/metronero-backend v0.0.0-20230312143011-a3d67f4825b2 h1:fco8eYp2XVYlKR1M1MNaJrVfQxym2tqWMhKnqL3eaDE=

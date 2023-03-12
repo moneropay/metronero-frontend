@@ -1,7 +1,7 @@
 package main
 
 import (
-	jwtware "github.com/gofiber/jwt/v3"
+//	jwtware "github.com/gofiber/jwt/v3"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/app/controllers"
 	"gitlab.com/moneropay/metronero/metronero-frontend/utils/server"
@@ -12,13 +12,16 @@ func main() {
 	config.Load()
 	app := server.Init()
 
-	app.Get("/login", controllers.GetLogin)
-	app.Get("/register", controllers.GetRegister)
-	//app.Post("/login", controllers.PostLogin)
+	app.Static("/assets", "./public")
 
-	app.Use(jwtware.New(jwtware.Config{
-		SigningKey: []byte(config.JwtSecret),
-	}))
+	app.Get("/login", controllers.GetLogin)
+	app.Post("/login", controllers.PostLogin)
+	app.Get("/register", controllers.GetRegister)
+	app.Get("/logout", controllers.GetLogout)
+
+//	app.Use(jwtware.New(jwtware.Config{
+//		SigningKey: []byte(config.JwtSecret),
+//	}))
 
 	merchant := app.Group("/merchant")
 	merchant.Get("/auth", controllers.MerchantAuth)
@@ -34,8 +37,6 @@ func main() {
 	admin.Get("/payments", controllers.AdminPayments)
 	admin.Get("/merchants", controllers.AdminMerchants)
 	admin.Get("/merchants/edit/:id", controllers.AdminMerchantEdit)
-
-	app.Static("/assets", "./public")
 
 	app.StartServerWithGracefulShutdown()
 }
