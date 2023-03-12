@@ -4,8 +4,8 @@ import (
 	jwtware "github.com/gofiber/jwt/v3"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/app/controllers"
-	"gitlab.com/moneropay/metronero/metronero-frontend/utils/server"
 	"gitlab.com/moneropay/metronero/metronero-frontend/utils/config"
+	"gitlab.com/moneropay/metronero/metronero-frontend/utils/server"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	app.Get("/logout", controllers.GetLogout)
 
 	app.Use(jwtware.New(jwtware.Config{
-		SigningKey: []byte(config.JwtSecret),
+		SigningKey:  []byte(config.JwtSecret),
 		TokenLookup: "cookie:token",
 	}))
 

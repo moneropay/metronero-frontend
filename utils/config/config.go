@@ -3,10 +3,10 @@ package config
 import "github.com/namsral/flag"
 
 var (
-        Bind string
-        Debug bool
-        Backend string
-	Uname string
+	Bind      string
+	Debug     bool
+	Backend   string
+	Uname     string
 	JwtSecret string
 )
 

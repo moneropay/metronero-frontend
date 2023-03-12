@@ -16,8 +16,8 @@ func AdminDashboard(c *fiber.Ctx) error {
 	}
 	return c.Render("admin-dashboard", fiber.Map{
 		"PageTitle": "Dashboard",
-		"Balance": walletrpc.XMRToDecimal(resp.Stats.WalletBalance),
-		"Profits": walletrpc.XMRToDecimal(resp.Stats.TotalProfits),
+		"Balance":   walletrpc.XMRToDecimal(resp.Stats.WalletBalance),
+		"Profits":   walletrpc.XMRToDecimal(resp.Stats.TotalProfits),
 	}, "layouts/admin-panel")
 }
 
@@ -48,7 +48,7 @@ func AdminMerchants(c *fiber.Ctx) error {
 func AdminMerchantEdit(c *fiber.Ctx) error {
 	params := c.AllParams()
 	return c.Render("admin-merchant-edit", fiber.Map{
-		"Username": params["uname"],
+		"Username":  params["uname"],
 		"PageTitle": "Merchant Edit",
 	}, "layouts/admin-panel")
 }

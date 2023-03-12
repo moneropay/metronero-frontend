@@ -1,11 +1,11 @@
 package api
 
 import (
-	"net/http"
-	"net/url"
+	"encoding/json"
 	"fmt"
 	"io"
-	"encoding/json"
+	"net/http"
+	"net/url"
 
 	"gitlab.com/moneropay/metronero/metronero-backend/app/models"
 
