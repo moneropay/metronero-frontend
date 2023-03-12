@@ -20,7 +20,7 @@ func PostLogin(c *fiber.Ctx) error {
 	}
 	token, err := api.UserLogin(username, password)
 	if err != nil {
-		return c.SendString("wtf" + err.Error())
+		return c.SendString(err.Error())
 	}
 
 	cookie := new(fiber.Cookie)

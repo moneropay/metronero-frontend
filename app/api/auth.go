@@ -5,10 +5,15 @@ import (
 	"net/url"
 	"io"
 	"encoding/json"
+	"errors"
 
 	"gitlab.com/moneropay/metronero/metronero-backend/app/models"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/utils/config"
+)
+
+var (
+	ErrUnauthorized = errors.New("Username or password is wrong.")
 )
 
 func UserLogin(username, password string) (*models.TokenInfo, error) {
@@ -23,6 +28,10 @@ func UserLogin(username, password string) (*models.TokenInfo, error) {
 	})
 	if err != nil {
 		return nil, err
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, ErrUnauthorized
 	}
 
 	b, err := io.ReadAll(resp.Body)
