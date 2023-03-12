@@ -1,10 +1,10 @@
 <section class="hero">
   <div class="hero-body">
     <p class="title">
-      Wallet balance: 0.61 XMR
+      Wallet balance: {{ .Balance }} XMR
     </p>
     <p class="subtitle">
-      Total profits: 56.24 XMR
+      Total profits: {{ .Profits }} XMR
     </p>
     <div class="buttons">
       <a class="button is-primary" href="/admin/instance">Manage instance</a>
@@ -21,7 +21,6 @@
   <thead>
     <tr>
       <th>Merchant</th>
-      <th>Invoice ID</th>
       <th>Amount</th>
       <th>Date</th>
     </tr>
@@ -29,13 +28,11 @@
   <tbody>
     <tr>
       <td>Siren</td>
-      <td>IU32DS</td>
       <td>1 XMR</td>
       <td>2023-02-21</td>
     </tr>
     <tr>
       <td>Munstie</td>
-      <td>KEFDH3</td>
       <td>10 XMR</td>
       <td>2023-02-12</td>
     </tr>

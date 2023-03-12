@@ -13,13 +13,12 @@ import (
 
 type Server struct {
 	*fiber.App
-	config.Config
 }
 
-func Init(cfg config.Config) *Server {
+func Init() *Server {
 	engine := html.New("./views", ".html")
 
-	if cfg.Debug {
+	if config.Debug {
 		engine.Reload(true)
 		engine.Debug(true)
 	}
@@ -28,7 +27,7 @@ func Init(cfg config.Config) *Server {
 		Views: engine,
 	})
 
-	return &Server{app, cfg}
+	return &Server{app}
 }
 
 func (s *Server) StartServerWithGracefulShutdown() {
@@ -46,7 +45,7 @@ func (s *Server) StartServerWithGracefulShutdown() {
 		close(idleConnsClosed)
 	}()
 
-	if err := s.Listen(s.Config.Bind); err != nil {
+	if err := s.Listen(config.Bind); err != nil {
 		log.Println("Failed to start server: ", err)
 	}
 

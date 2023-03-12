@@ -2,11 +2,21 @@ package controllers
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v4"
+
+	"gitlab.com/moneropay/metronero/metronero-frontend/app/api"
 )
 
 func AdminDashboard(c *fiber.Ctx) error {
+	token := c.Locals("user").(*jwt.Token)
+	resp, err := api.GetAdminDashboard(token)
+	if err != nil {
+		return c.SendString(err.Error())
+	}
 	return c.Render("admin-dashboard", fiber.Map{
 		"PageTitle": "Dashboard",
+		"Balance": resp.Stats.WalletBalance,
+		"Profits": resp.Stats.TotalProfits,
 	}, "layouts/admin-panel")
 }
 
