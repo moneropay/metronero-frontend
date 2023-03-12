@@ -2,19 +2,19 @@ package config
 
 import "github.com/namsral/flag"
 
-type Config struct {
+var (
         Bind string
         Debug bool
         Backend string
 	Uname string
-}
+	JwtSecret string
+)
 
-func Load() Config {
-	var cfg Config
-	flag.StringVar(&cfg.Bind, "bind", ":5002", "Bind address")
-	flag.BoolVar(&cfg.Debug, "debug", false, "Debug mode")
-	flag.StringVar(&cfg.Backend, "backend", ":5001", "Metronero backend host:port")
+func Load() {
+	flag.StringVar(&Bind, "bind", ":5002", "Bind address")
+	flag.BoolVar(&Debug, "debug", false, "Debug mode")
+	flag.StringVar(&Backend, "backend", ":5001", "Metronero backend host:port")
+	flag.StringVar(&JwtSecret, "token-secret", "", "Secret for authentication tokens, same as backend")
 	flag.Parse()
-	cfg.Uname = "Siren"
-	return cfg
+	Uname = "Siren"
 }
