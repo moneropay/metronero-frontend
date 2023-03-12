@@ -9,7 +9,10 @@ import (
 )
 
 func GetLogin(c *fiber.Ctx) error {
-	return c.Render("login", nil)
+	// Display a success message if the user ended up here
+	// after successfully logging in.
+	reg := c.Query("success", "false")
+	return c.Render("login", fiber.Map{"Registered": reg})
 }
 
 func PostLogin(c *fiber.Ctx) error {
@@ -40,6 +43,18 @@ func PostLogin(c *fiber.Ctx) error {
 
 func GetRegister(c *fiber.Ctx) error {
 	return c.Render("register", nil)
+}
+
+func PostRegister(c *fiber.Ctx) error {
+	username := c.FormValue("username")
+	password := c.FormValue("password")
+	if username == "" || password == "" {
+		return c.SendString("Bad request!")
+	}
+	if err := api.UserRegister(username, password); err != nil {
+		return c.SendString(err.Error())
+	}
+	return c.Redirect("/login?success=true")
 }
 
 func GetLogout(c *fiber.Ctx) error {

@@ -17,6 +17,7 @@ func main() {
 	app.Get("/login", controllers.GetLogin)
 	app.Post("/login", controllers.PostLogin)
 	app.Get("/register", controllers.GetRegister)
+	app.Post("/register", controllers.PostRegister)
 	app.Get("/logout", controllers.GetLogout)
 
 	app.Use(jwtware.New(jwtware.Config{

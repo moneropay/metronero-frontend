@@ -14,6 +14,13 @@
     <div class="container">
       <div class="columns is-centered is-vcentered">
         <div class="column is-one-third">
+	{{ if eq .Registered "true" }}
+	<article class="message is-primary">
+        <div class="message-body">
+          Registration successful. You can now log in.
+        </div>
+        </article>
+	{{ end }}
           <div class="card has-text-centered">
             <div class="card-content">
               <figure class="image is-128x128 is-inline-block mb-3">
@@ -39,10 +46,11 @@
 		  <input class="input" type="password" placeholder="Password" name="password">
 	        </p>
               </div>
-              <div class="control mt-5">
+              <div class="control my-5">
                 <button class="button is-primary">Submit</button>
               </div>
 	      </form>
+	      <p>Don't have an account? <a href="/register">Register</a>.</p>
             </div>
           </div>
         </div>

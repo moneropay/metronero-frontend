@@ -14,6 +14,7 @@ import (
 
 var (
 	ErrUnauthorized = errors.New("Username or password is wrong.")
+	ErrRegisterFail = errors.New("Failed to register new user.")
 )
 
 func UserLogin(username, password string) (*models.TokenInfo, error) {
@@ -42,4 +43,24 @@ func UserLogin(username, password string) (*models.TokenInfo, error) {
 	var token models.TokenInfo
 	err = json.Unmarshal(b, &token)
 	return &token, err
+}
+
+func UserRegister(username, password string) error {
+	endpoint, err := url.JoinPath(config.Backend, "/register")
+	if err != nil {
+		return err
+	}
+
+	resp, err := http.PostForm(endpoint, url.Values{
+		"username": []string{username},
+		"password": []string{password},
+	})
+	if err != nil {
+		return err
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return ErrRegisterFail
+	}
+	return nil
 }
