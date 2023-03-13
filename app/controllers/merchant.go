@@ -11,6 +11,7 @@ func MerchantDashboard(c *fiber.Ctx) error {
 		"Username":       token.GetUsername(c),
 		"PageTitle":      "Dashboard",
 		"CurrentBalance": "12",
+		"TotalSales":     "132",
 	}, "layouts/merchant-panel")
 }
 

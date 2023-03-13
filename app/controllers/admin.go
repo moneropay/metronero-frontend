@@ -16,9 +16,10 @@ func AdminDashboard(c *fiber.Ctx) error {
 		return serveErrorPage(c, http.StatusInternalServerError, err.Error())
 	}
 	return c.Render("admin-dashboard", fiber.Map{
-		"PageTitle": "Dashboard",
-		"Balance":   walletrpc.XMRToDecimal(resp.Stats.WalletBalance),
-		"Profits":   walletrpc.XMRToDecimal(resp.Stats.TotalProfits),
+		"PageTitle":   "Dashboard",
+		"Balance":     walletrpc.XMRToDecimal(resp.Stats.WalletBalance),
+		"Profits":     walletrpc.XMRToDecimal(resp.Stats.TotalProfits),
+		"Withdrawals": resp.Recent,
 	}, "layouts/admin-panel")
 }
 

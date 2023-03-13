@@ -26,16 +26,13 @@
     </tr>
   </thead>
   <tbody>
+  {{ range .Withdrawals }}
     <tr>
-      <td>Siren</td>
-      <td>1 XMR</td>
-      <td>2023-02-21</td>
+      <td>{{ .MerchantName }}</td>
+      <td>{{ .Amount }} XMR</td>
+      <td>{{ .Date }}</td>
     </tr>
-    <tr>
-      <td>Munstie</td>
-      <td>10 XMR</td>
-      <td>2023-02-12</td>
-    </tr>
+    {{ end }}
   </tbody>
 </table>
 </div>
