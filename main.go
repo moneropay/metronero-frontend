@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gofiber/fiber/v2"
 	jwtware "github.com/gofiber/jwt/v3"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/app/controllers"
@@ -23,6 +24,9 @@ func main() {
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey:  []byte(config.JwtSecret),
 		TokenLookup: "cookie:token",
+		ErrorHandler: func(c *fiber.Ctx, err error) error {
+			return c.Redirect("/login?expired=true")
+		},
 	}))
 
 	merchant := app.Group("/merchant")

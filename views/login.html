@@ -14,6 +14,7 @@
     <div class="container">
       <div class="columns is-centered is-vcentered">
         <div class="column is-one-third">
+
 	{{ if eq .Registered "true" }}
 	<article class="message is-primary">
         <div class="message-body">
@@ -21,7 +22,16 @@
         </div>
         </article>
 	{{ end }}
-          <div class="card has-text-centered">
+
+	{{ if eq .Expired "true" }}
+	<article class="message is-danger">
+        <div class="message-body">
+          You need to log in again to proceed.
+        </div>
+        </article>
+	{{ end }}
+
+	  <div class="card has-text-centered">
             <div class="card-content">
               <figure class="image is-128x128 is-inline-block mb-3">
                 <img src="/assets/img/metronero-logo.png" alt="Metronero">

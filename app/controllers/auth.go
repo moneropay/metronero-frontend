@@ -12,7 +12,14 @@ func GetLogin(c *fiber.Ctx) error {
 	// Display a success message if the user ended up here
 	// after successfully logging in.
 	reg := c.Query("success", "false")
-	return c.Render("login", fiber.Map{"Registered": reg})
+
+	// Display a message telling the user to login to proceed
+	// in case of invalid or expired token.
+	exp := c.Query("expired", "false")
+	return c.Render("login", fiber.Map{
+		"Registered": reg,
+		"Expired": exp,
+	})
 }
 
 func PostLogin(c *fiber.Ctx) error {
