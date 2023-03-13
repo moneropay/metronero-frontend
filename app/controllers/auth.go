@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"net/http"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -26,11 +27,12 @@ func PostLogin(c *fiber.Ctx) error {
 	username := c.FormValue("username")
 	password := c.FormValue("password")
 	if username == "" || password == "" {
-		return c.SendString("Bad request!")
+		return serveErrorPage(c, http.StatusBadRequest,
+		    "Required form fields must not be empty")
 	}
 	token, err := api.UserLogin(username, password)
 	if err != nil {
-		return c.SendString(err.Error())
+		return serveErrorPage(c, http.StatusInternalServerError, err.Error())
 	}
 
 	cookie := new(fiber.Cookie)
@@ -56,10 +58,11 @@ func PostRegister(c *fiber.Ctx) error {
 	username := c.FormValue("username")
 	password := c.FormValue("password")
 	if username == "" || password == "" {
-		return c.SendString("Bad request!")
+		return serveErrorPage(c, http.StatusBadRequest,
+		    "Required form fields must not be empty")
 	}
 	if err := api.UserRegister(username, password); err != nil {
-		return c.SendString(err.Error())
+		return serveErrorPage(c, http.StatusInternalServerError, err.Error())
 	}
 	return c.Redirect("/login?success=true")
 }

@@ -1,8 +1,9 @@
 package controllers
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"net/http"
 
+	"github.com/gofiber/fiber/v2"
 	"gitlab.com/moneropay/go-monero/walletrpc"
 
 	"gitlab.com/moneropay/metronero/metronero-frontend/app/api"
@@ -12,7 +13,7 @@ func AdminDashboard(c *fiber.Ctx) error {
 	token := c.Cookies("token")
 	resp, err := api.GetAdminDashboard(token)
 	if err != nil {
-		return c.SendString(err.Error())
+		return serveErrorPage(c, http.StatusInternalServerError, err.Error())
 	}
 	return c.Render("admin-dashboard", fiber.Map{
 		"PageTitle": "Dashboard",

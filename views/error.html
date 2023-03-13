@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/forkawesome/css/fork-awesome.min.css">
+  <link rel="icon" type="image/png" href="/assets/img/metronero-logo.png" sizes="32x32">
+  <title>Oops | Metronero</title>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-flex is-vcentered">
+        <div class="column">
+          <p class="title">Something went wrong.</p>
+          <p class="subtitle">Our code monkeys are working so hard to fix this!</p>
+
+	  <article class="message is-warning">
+            <div class="message-body">
+              <p><strong>Code:</strong> {{ .Code }}</p>
+              <p><strong>Message:</strong> {{ .Message }}</p>
+            </div>
+          </article>
+          <a href="/">← Back to dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="assets/forkawesome/css/fork-awesome.min.css">
+  <link rel="icon" type="image/png" href="assets/img/metronero.png" sizes="32x32">
+  <title>Default Template | Metronero</title>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-one-third">
+          <div class="card has-text-centered">
+            <div class="card-content">
+	      <p class="title is-spaced">Send {{ .Amount }} XMR to</br><code>{{ .Address }}</code></p>
+	      <p class="subtitle">or scan the QR code with your wallet</p>
+              <figure class="image is-128x128 is-inline-block mb-3">
+                <img src="./assets/img/example-qr.png" alt="Metronero">
+              </figure>
+	      <p><strong>Status:</strong> {{ .Status}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
